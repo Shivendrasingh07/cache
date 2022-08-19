@@ -69,7 +69,6 @@ func set() {
 		return
 	}
 
-	time.Sleep(time.Second * 1)
 	fmt.Println("value and Expiry time added at key successfully")
 }
 
