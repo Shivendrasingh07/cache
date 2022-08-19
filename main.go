@@ -62,13 +62,13 @@ func set() {
 	}
 
 	data := models.KeyValueStruct{Key: key, Value: value, TimeSeconds: expTime}
-
+	go func() {
 	err = cache.Set(data)
-	if err != nil {
-		fmt.Println("unable to set data")
-		return
-	}
-
+		if err != nil {
+			fmt.Println("unable to set data")
+			return
+		}
+	}()
 	fmt.Println("value and Expiry time added at key successfully")
 }
 
